@@ -23,7 +23,7 @@ tags = df.artists + ' ' + df.album_name + ' ' + df.track_genre
 df['tags'] = tags
 new_df = df[['track_name', 'tags', 'popularity']]
 
-# Print the head of the new DataFrame
+
 print(new_df.head())
 
 # Fill missing values in 'tags' column
@@ -33,8 +33,7 @@ new_df['tags'] = new_df['tags'].fillna('')
 sample_size = min(100, len(new_df))  # Ensure sample size is valid
 sampled_df = new_df.sample(n=sample_size, random_state=42)
 
-# Print the sampled DataFrame
-print(sampled_df.head(10))
+#print(sampled_df.head(10))
 
 # Generate TF-IDF matrix for the sampled data
 tfidf_matrix_sampled = tfidf.fit_transform(sampled_df['tags'])
